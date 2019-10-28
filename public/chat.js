@@ -1,6 +1,7 @@
 //Make Connection
 
-var socket = io('https://intense-bayou-12672.herokuapp.com/');
+var socket = io('http://localhost:3000/');
+
 
 //Query Dom
 
@@ -19,24 +20,25 @@ btn.addEventListener('click',(e)=>{
     e.preventDefault();
     socket.emit('chat',{
         message : message.value,
-        handle : name
+        handle : handle.value
     });
 });
 
 
 message.addEventListener('keypress',(e)=>{
-    
-       socket.emit('typing',name);
+       socket.emit('typing',handle.value);
         if(e.keyCode == 13){
          socket.emit('chat',{
             message : message.value,
-            handle : name
+            handle : handle.value
+
         });
    }
 });
 
 //Load Old Messages
 socket.on('loadold',(data)=>{
+    output.innerHTML = "";
     for (var i=0; i < data.length; i++) {
      output.innerHTML += '<P><strong>'+data[i].name+': </strong>'+data[i].msg+'</P>';
     }
