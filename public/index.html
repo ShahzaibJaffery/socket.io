@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Web Socket</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.js"></script>
+
     <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
@@ -23,5 +26,12 @@
     </div>
     
  <script src="./chat.js"></script>
+ <script>
+     $(document).ready(function(){
+        $("#chat-window").stop().animate({ scrollTop: $("#mario-chat")[0].scrollHeight}, 1000);
+
+     });
+
+ </script>
 </body>
 </html>

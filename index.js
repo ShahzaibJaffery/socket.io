@@ -61,16 +61,21 @@ io.on('connection',(socket)=>{
 
            //PUBLIC
         io.sockets.emit('chat',data);
-        // Chat.create({name : data.handle , msg : data.message},(err,res)=>{
-        //     if(err){
-        //         console.log(err);
-        //     }
-        // });
+        Chat.create({name : data.handle , msg : data.message},(err,res)=>{
+            if(err){
+                console.log(err);
+            }else{
+              console.log(res);
+            }
+        });
     }
     });
 
     socket.on('typing',(data)=>{
-          socket.broadcast.emit('typing',data);
+          socket.broadcast.emit('notifyTyping',{message : data.message});
         
     });
+
+    socket.on("stopTyping", () => { socket.broadcast.emit("notifyStopTyping"); });
+
 });

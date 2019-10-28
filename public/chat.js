@@ -26,7 +26,7 @@ btn.addEventListener('click',(e)=>{
 
 
 message.addEventListener('keypress',(e)=>{
-       socket.emit('typing',handle.value);
+       socket.emit('typing',{message : "user is typing..."});
         if(e.keyCode == 13){
          socket.emit('chat',{
             message : message.value,
@@ -35,6 +35,12 @@ message.addEventListener('keypress',(e)=>{
         });
    }
 });
+
+message.addEventListener("keyup", () =>  {
+    socket.emit("stopTyping", "");
+});
+
+
 
 //Load Old Messages
 socket.on('loadold',(data)=>{
@@ -52,6 +58,12 @@ socket.on('chat',(data)=>{
     message.value = "";
 });
 
-socket.on('typing',(data)=>{
-    feedback.innerHTML = '<p><em>'+ data +' is typing a message...</em></p>';
+
+socket.on("notifyTyping", data  =>  {
+    feedback.innerHTML = '<p><em>'+data.message+'</em></p>';
+});
+
+socket.on("notifyStopTyping", () =>  {
+    feedback.innerHTML  =  "";
+    
 });
