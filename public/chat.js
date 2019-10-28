@@ -1,6 +1,6 @@
 //Make Connection
 
-var socket = io('http://localhost:80/');
+var socket = io('https://intense-bayou-12672.herokuapp.com:80/');
 
 
 //Query Dom
