@@ -1,6 +1,6 @@
 //Make Connection
 
-var socket = io('http://localhost:3000/');
+var socket = io('http://localhost:80/');
 
 
 //Query Dom
