@@ -53,10 +53,7 @@ label{
 }
 
 input, #handle{
-    width: 25%;
     background: #ededed;
-    height: 57px;
-    float: left;
 }
 
 input,#message{
@@ -64,9 +61,8 @@ input,#message{
     box-sizing: border-box;
     background: #eee;
     border: 0;
-    float: right;
     display: block;
-    width: 75%;
+    width: 100%;
     background: #fff;
     border-bottom: 1px solid #eee;
     border: 1px solid #ededed;
