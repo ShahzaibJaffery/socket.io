@@ -30,6 +30,12 @@ h2{
     color: #555;
 }
 
+#feedback{
+    height: 20px;
+    position: relative;
+    bottom: 13px;
+}
+
 #feedback p{
     color: black;
     padding: 14px 0px;
@@ -46,13 +52,21 @@ label{
     padding: 10px 20px;
 }
 
+input, #handle{
+    width: 25%;
+    background: #ededed;
+    height: 57px;
+    float: left;
+}
+
 input,#message{
     padding: 10px 20px;
     box-sizing: border-box;
     background: #eee;
     border: 0;
+    float: right;
     display: block;
-    width: 100%;
+    width: 75%;
     background: #fff;
     border-bottom: 1px solid #eee;
     border: 1px solid #ededed;

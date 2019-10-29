@@ -19,9 +19,10 @@
             <div id="output"></div>
             <div id="feedback"></div>
         </div>
-    
+        <div>
         <input id="handle" type="text" placeholder="Your Name">
         <textarea id="message" placeholder="Enter Message"></textarea>
+        </div>
         <button id="send">Send</button>
     </div>
     
@@ -30,7 +31,12 @@
      $(document).ready(function(){
         $("#chat-window").stop().animate({ scrollTop: $("#mario-chat")[0].scrollHeight}, 1000);
 
-     });
+        $('#send').on('click',function(){
+            $("#chat-window").stop().animate({ scrollTop: $("#mario-chat")[0].scrollHeight}, 1000);
+         
+        });
+
+    });
 
  </script>
 </body>
