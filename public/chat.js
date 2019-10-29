@@ -37,7 +37,7 @@ btn.addEventListener('click',(e)=>{
 });
 
 
-message.addEventListener('keypress',(e)=>{
+message.addEventListener('keydown',(e)=>{
        socket.emit('typing',{message : "user is typing..."});
         if(e.keyCode == 13){
         $("#chat-window").stop().animate({ scrollTop: $("#mario-chat")[0].scrollHeight}, 1000);
